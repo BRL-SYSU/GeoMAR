@@ -1,0 +1,99 @@
+model:
+  base_learning_rate: 4.5e-6  
+  max_epochs: 50
+  target: GeoMAR.models.geomar.GeoMARModel 
+  params:
+    image_key: 'lq' 
+    # HQ codebook path
+    ckpt_path_HQ: './experiments/HQ_codebook.ckpt' 
+    # LQ codebook path
+    ckpt_path_LQ: './experiments/LQ_codebook.ckpt'  
+    train_text_features_dir: './datasets/text_feature/ffhq'
+    eval_text_features_dir: './datasets/text_feature/celeba144'
+    special_params_lr_scale: 1 
+    comp_params_lr_scale: 10 
+    schedule_step: [4000000, 8000000]
+    ddconfig: 
+      target: maskvqvae.maskedVQVAEGAN  
+      params:
+        embed_dim: 256
+        n_embed: 1024 
+        double_z: False
+        z_channels: 256 
+        resolution: 512 
+        in_channels: 3
+        out_ch: 3
+        ch: 64 
+        ch_mult: [ 1,2,2,4,4,8]  
+        num_res_blocks: 2 
+        dropout: 0.0
+        attn_resolutions: [16] 
+        enable_mid: True 
+
+        fix_decoder: True
+        fix_codebook: True
+        fix_encoder: False
+        # head_size: 8
+
+    lossconfig:
+      target: modules.losses.vqperceptual.VQLPIPSWithDiscriminatorWithCompWithIdentity
+      params:
+        disc_conditional: False 
+        disc_in_channels: 3 
+        disc_start: 10001 
+        disc_weight: 0.8 
+        codebook_weight: 1.0 
+        use_actnorm: False 
+
+
+data:
+  target: main_GeoMAR.DataModuleFromConfig
+  params:
+    batch_size: 4
+    num_workers: 8
+    train:
+      target: GeoMAR.data.ffhq_degradation_dataset.FFHQDegradationDataset
+      params:
+        dataroot_gt: ./datasets/FFHQ512x512
+        io_backend:
+          type: disk
+        use_hflip: true
+        mean: [0.5, 0.5, 0.5] 
+        std: [0.5, 0.5, 0.5] 
+        out_size: 512
+
+        blur_kernel_size: [19,20]
+        kernel_list: ['iso', 'aniso']
+        kernel_prob: [0.5, 0.5]
+        blur_sigma: [0.1, 15]
+        downsample_range: [0.8, 30]
+        noise_range: [0, 20]
+        jpeg_range: [30, 100]
+
+        color_jitter_prob: ~
+        color_jitter_shift: 20
+        color_jitter_pt_prob: ~
+        gray_prob: ~
+        gt_gray: True
+
+        crop_components: True 
+        component_path: experiments/pretrained_models/FFHQ_eye_mouth_landmarks_512.pth
+        eye_enlarge_ratio: 1
+
+    validation:
+      target: GeoMAR.data.custom_dataset.CelebARandomPairedDataset
+      params:
+        lq_folder: ./datasets/celeba_test_144 
+        hq_folder: ./datasets/celeba_512_validation 
+        image_size: 512
+        limit: 3000
+
+
+
+
+logger:
+  target: pytorch_lightning.loggers.TensorBoardLogger
+  params:
+    save_dir: ./logs
+    name: GeoMAR
+    version: ''
