@@ -58,8 +58,8 @@ Testing Dataset:
 
 Please put the following datasets in the ./datasets/ folder.
 
-| Dataset | Short description | Download | text features |
-| --- | --- | --- |
+| Dataset | Short description | Download | Text features |
+| --- | --- | --- | --- |
 | CelebA-Test (HQ) | 3,000 HQ ground-truth images for evaluation | — | — |
 | CelebA-Test-144 (LQ) | 3,000 synthetic LQ images for testing | — | — |
 | CelebA-Test-267 (LQ) | 3,000 synthetic LQ images for testing | — | — |
