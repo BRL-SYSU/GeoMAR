@@ -599,7 +599,7 @@ class GeoMARModel(pl.LightningModule):
 
 
         
-    def forward(self, input, gt=None,filenames=None, save_features=False, features_dir="features"):
+    def forward(self, input, gt=None,filenames=None):
         
         if gt is not None:   # Check whether GT is provided.
             quant_gt, gt_indices, gt_info, gt_hs, gt_h, gt_dictionary = self.encode_to_gt(gt) # Encode GT.

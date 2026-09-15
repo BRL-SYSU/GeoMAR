@@ -12,7 +12,7 @@ if [ ! -d $out_root ];then
 fi
 
 
-dataset_name_array=('test')
+dataset_name_array=('celeba_test_144')
 
 
 dataset_location_array=('celeba_test_144')
@@ -21,7 +21,7 @@ dataset_location_array=('celeba_test_144')
 checkpoint='./experiments/GeoMAR_model.ckpt'
 config='./configs/GeoMAR.yaml'
 output_name='GeoMAR'
-GPU='2'
+GPU='0'
 
 # echo ${0}
 echo ${checkpoint}
@@ -33,7 +33,7 @@ echo $dataset_name_array
 
 outdir=$root'/'$output_name'_'${dataset_name_array[0]}
 align_test_path='./datasets/'${dataset_location_array[0]}
-
+eval_text_features_dir="./datasets/text_feature/celeba144"
 
 
 CUDA_VISIBLE_DEVICES=$GPU python -u scripts/test.py \
@@ -41,7 +41,9 @@ CUDA_VISIBLE_DEVICES=$GPU python -u scripts/test.py \
 -r $checkpoint \
 -c $config \
 --test_path $align_test_path \
---aligned
+--aligned \
+model.params.eval_text_features_dir="$eval_text_features_dir"
+
 
 
 

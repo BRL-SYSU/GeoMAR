@@ -4,8 +4,9 @@ exp_name='GeoMAR'
 root_path='experiments'
 out_root_path='results'
 
-tag='test'
+tag='celeba_test_144'
 align_test_path="./datasets/celeba_test_144"
+eval_text_features_dir="./datasets/text_feature/celeba144"
 outdir=$out_root_path'/'$exp_name'_'$tag
 
 if [ ! -d $outdir ];then
@@ -18,5 +19,4 @@ python -u scripts/test.py \
 -c 'configs/GeoMAR.yaml' \
 --test_path $align_test_path \
 --aligned \
---save_features \
-
+model.params.eval_text_features_dir="$eval_text_features_dir"

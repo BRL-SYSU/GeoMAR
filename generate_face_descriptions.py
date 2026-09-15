@@ -2,11 +2,9 @@ import os
 import sys
 import glob
 import torch
-import time
 from tqdm import tqdm
 from transformers import Qwen3VLForConditionalGeneration, AutoProcessor
 from qwen_vl_utils import process_vision_info
-import random
 # ================= Command-Line Argument Handling =================
 if len(sys.argv) != 4:
     print(f"Usage: {sys.argv[0]} <rgb_dir> <parsing_map_dir> <output_dir>")
