@@ -6,9 +6,6 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2608.03923-b31b1b.svg)](https://arxiv.org/abs/2608.03923)
 [![Paper](https://img.shields.io/badge/Paper-PDF-orange.svg)](https://arxiv.org/pdf/2608.03923)
 
-Official PyTorch implementation of **GeoMAR**, accepted by **ACM Multimedia 2026**.
-
-
 </div>
 
 
@@ -70,7 +67,7 @@ Please put the following datasets in the ./datasets/ folder.
 
 ## Models and Priors
 
-Pretrained checkpoints and prepared geometric text features will be released. The expected layout is:
+Pretrained models used for training and the trained model of our GeoMAR can be attained from HuggingFace(https://huggingface.co/ganlu33/GeoMAR_pretrain_model/tree/main). Link these models to ./experiments.
 
 ```text
 experiments/
