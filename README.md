@@ -57,17 +57,17 @@ Please put the following datasets in the ./datasets/ folder.
 
 | Dataset | Short description | Download | Text features |
 | --- | --- | --- | --- |
-| CelebA-Test (HQ) | 3,000 HQ ground-truth images for evaluation | — | — |
-| CelebA-Test-144 (LQ) | 3,000 synthetic LQ images for testing | — | — |
-| CelebA-Test-267 (LQ) | 3,000 synthetic LQ images for testing | — | — |
-| LFW-Test (LQ) | 1,711 real-world images for testing | — | — |
-| WebPhoto-Test | 407 real-world images for testing | — | — |
-| WIDER-Test (LQ) | 970 real-world images for testing | — | — |
+| CelebA-Test (HQ) | 3,000 HQ ground-truth images for evaluation | [celeba_512_validation.zip](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/celeba_512_validation.zip) | — |
+| CelebA-Test-144 (LQ) | 3,000 synthetic LQ images for testing | [celeba-test-144.zip](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/celeba_test_144.zip) | — |
+| CelebA-Test-267 (LQ) | 3,000 synthetic LQ images for testing | [celeba-test-267.zip](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/celeba_test_267.zip) | — |
+| LFW-Test (LQ) | 1,711 real-world images for testing | [LFW-Test.zip](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/LFW-Test.zip) | — |
+| WebPhoto-Test | 407 real-world images for testing | [WebPhoto-Test.zp](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/WebPhoto-Test.zip) | — |
+| WIDER-Test (LQ) | 970 real-world images for testing | [WIDER-Test.zip](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/WIDER-Test.zip) | — |
 
 
 ## Models and Priors
 
-Pretrained models used for training and the trained model of our GeoMAR can be attained from HuggingFace(https://huggingface.co/ganlu33/GeoMAR_pretrain_model/tree/main). Link these models to ./experiments.
+Pretrained models used for training and the trained model of our GeoMAR can be attained from [HuggingFace](https://huggingface.co/ganlu33/GeoMAR_pretrain_model/tree/main). Link these models to ./experiments.
 
 ```text
 experiments/
