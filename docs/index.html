@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GeoMAR: geometrically aligned features and masked autoregressive refinement for blind face restoration. ACM Multimedia 2026.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GeoMAR | ACM Multimedia 2026">
+  <meta property="og:description" content="Unleashing Geometrically Aligned Features for Masked Autoregressive Blind Face Restoration.">
+  <title>GeoMAR | Blind Face Restoration · ACM MM 2026</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" href="assets/fonts/noto-sans.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main">
+    <section class="hero container" id="top" aria-labelledby="paper-title">
+      <h1 id="paper-title">GeoMAR: Unleashing Geometrically Aligned Features for Masked Autoregressive Blind Face Restoration</h1>
+      <div class="authors">
+        <a href="mailto:ganlu33@mail2.sysu.edu.cn">Lu Gan<sup>1,*</sup></a>
+        <a href="mailto:yanhy27@mail2.sysu.edu.cn">Hanyu Yan<sup>1,*</sup></a>
+        <a href="mailto:chaofengchen@whu.edu.cn">Chaofeng Chen<sup>2</sup></a>
+        <a href="mailto:hujq28@mail2.sysu.edu.cn">Junqi Hu<sup>1</sup></a>
+        <a href="mailto:zengd8@mail.sysu.edu.cn">Dan Zeng<sup>1,3,†</sup></a>
+      </div>
+      <div class="affiliations"><span><sup>1</sup> Sun Yat-sen University</span><span><sup>2</sup> Wuhan University</span></div>
+      <p class="affiliation-extra"><sup>3</sup> The Technology Innovation Center for Collaborative Applications of Natural Resources Data in GBA, MNR</p>
+      <p class="author-notes">* Equal contribution &nbsp;&nbsp; † Corresponding author</p>
+      <p class="venue">ACM Multimedia 2026</p>
+      <div class="resource-links">
+        <a href="https://arxiv.org/pdf/2608.03923" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6v18h12V7l-4-4Zm0 0v5h5M9 12h6M9 16h6"/></svg><span>Paper</span></a>
+        <a href="https://arxiv.org/abs/2608.03923" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 5 10 14M17 5 7 19"/></svg><span>arXiv</span></a>
+        <a href="https://github.com/BRL-SYSU/GeoMAR" target="_blank" rel="noopener noreferrer"><svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.61-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.82.09-.65.35-1.08.64-1.33-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.59c0 .26.18.58.69.48A10 10 0 0 0 12 2Z"/></svg><span>Code</span></a>
+        <a href="assets/supplementary.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18H6zM9 8h6M9 12h6M9 16h4"/></svg><span>Supplementary</span></a>
+      </div>
+      <div class="hero-comparisons">
+        <figure class="comparison-card">
+          <div class="comparison" style="--position:50%">
+            <img src="assets/lfw-geomar.webp" alt="GeoMAR restoration of the LFW-Test example" width="512" height="512" fetchpriority="high">
+            <img class="comparison-before" src="assets/lfw-input.webp" alt="Degraded input from LFW-Test" width="512" height="512">
+            <span class="image-tag tag-before">Input</span><span class="image-tag tag-after">GeoMAR</span>
+            <span class="comparison-line" aria-hidden="true"><span>↔</span></span>
+            <input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="LFW-Test input and GeoMAR comparison" aria-valuetext="50 percent input, 50 percent GeoMAR">
+          </div>
+          <figcaption><span>LFW-Test</span><span>Mild degradation</span></figcaption>
+        </figure>
+        <figure class="comparison-card">
+          <div class="comparison" style="--position:50%">
+            <img src="assets/webphoto-geomar.webp" alt="GeoMAR restoration of the WebPhoto-Test example" width="512" height="512" fetchpriority="high">
+            <img class="comparison-before" src="assets/webphoto-input.webp" alt="Degraded input from WebPhoto-Test" width="512" height="512">
+            <span class="image-tag tag-before">Input</span><span class="image-tag tag-after">GeoMAR</span>
+            <span class="comparison-line" aria-hidden="true"><span>↔</span></span>
+            <input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="WebPhoto-Test input and GeoMAR comparison" aria-valuetext="50 percent input, 50 percent GeoMAR">
+          </div>
+          <figcaption><span>WebPhoto-Test</span><span>Medium degradation</span></figcaption>
+        </figure>
+        <figure class="comparison-card">
+          <div class="comparison" style="--position:50%">
+            <img src="assets/wider-geomar.webp" alt="GeoMAR restoration of the WIDER-Test example" width="512" height="512" fetchpriority="high">
+            <img class="comparison-before" src="assets/wider-input.webp" alt="Degraded input from WIDER-Test" width="512" height="512">
+            <span class="image-tag tag-before">Input</span><span class="image-tag tag-after">GeoMAR</span>
+            <span class="comparison-line" aria-hidden="true"><span>↔</span></span>
+            <input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="WIDER-Test input and GeoMAR comparison" aria-valuetext="50 percent input, 50 percent GeoMAR">
+          </div>
+          <figcaption><span>WIDER-Test</span><span>Heavy degradation</span></figcaption>
+        </figure>
+      </div>
+      <p class="teaser-caption"><strong>GeoMAR</strong> combines geometrically aligned features with masked autoregressive refinement for blind face restoration. Here we show representative results on three real-world benchmarks. Drag the sliders to compare the degraded inputs with our restorations. Red boxes and insets highlight local facial details.</p>
+    </section>
+
+    <section class="section container overview" id="overview" aria-labelledby="overview-title">
+      <h2 id="overview-title">Abstract</h2>
+      <div class="overview-copy"><p>Codebook-based blind face restoration (BFR) often suffers from ambiguous conditioning features and a fragile prediction mechanism under severe degradation. To address these challenges, we propose GeoMAR, a framework designed to unleash geometrically aligned features with masked autoregressive (MAR) refinement for robust face restoration. For feature conditioning, we introduce a dual-input extraction pipeline to extract component-based geometric descriptions with explicit, spatially faithful anchors. These textual priors are integrated with low-quality (LQ) features via an Aligned Geometric Priors Injector, which employs a KV-Q exchange strategy to generate geometrically aligned features. For prediction mechanism, we reformulate the one-step mapping into a multi-step MAR process. This coarse-to-fine generation progressively refines complex facial regions based on increasingly reliable context. Experiments on one synthetic and three real-world benchmarks demonstrate that GeoMAR achieves highly competitive perceptual quality and coherent visual structures compared with existing methods.</p></div>
+    </section>
+
+    <section class="method-section" id="method" aria-labelledby="method-title">
+      <div class="container section">
+        <h2 id="method-title">Overview</h2>
+        <figure class="framework-figure"><a href="assets/framework.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the full-resolution GeoMAR framework figure"><img src="assets/framework.webp" alt="GeoMAR framework: RGB image and facial parsing map feed the Geometric Priors Extractor and Injector; aligned features condition masked autoregressive latent code refinement and HQ decoding." width="2200" height="1437" loading="lazy"></a><figcaption>The GeoMAR framework. Click the figure to view it at full resolution.</figcaption></figure>
+        <div class="method-details">
+          <p><strong>Geometrically aligned conditioning.</strong> A vision-language model jointly reads the RGB image and its facial parsing map to describe individual facial components. The injector combines these textual priors with low-quality features through SFT enhancement and KV-Q exchange cross-attention.</p>
+          <p><strong>Masked autoregressive refinement.</strong> Instead of predicting every latent code in a single pass, the transformer progressively predicts and refines facial codes using increasingly reliable context. The default configuration uses eight prediction steps.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="results" aria-labelledby="results-title">
+      <h2 id="results-title">Qualitative Comparisons</h2>
+      <p class="section-intro">For more results, please refer to the <a href="assets/supplementary.pdf" target="_blank" rel="noopener noreferrer">supplementary material</a>.</p>
+      <div class="dataset-tabs" role="tablist" aria-label="Qualitative comparison dataset">
+        <button id="tab-lfw" role="tab" aria-selected="true" aria-controls="comparison-panel" data-dataset="lfw">LFW-Test</button>
+        <button id="tab-webphoto" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-dataset="webphoto">WebPhoto-Test</button>
+        <button id="tab-wider" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-dataset="wider">WIDER-Test</button>
+        <button id="tab-celeba" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-dataset="celeba">CelebA-Test</button>
+      </div>
+      <div id="comparison-panel" role="tabpanel" aria-labelledby="tab-lfw" tabindex="0">
+        <div class="baseline-grid" id="baseline-grid">
+          <figure><img src="assets/lfw-input.webp" alt="LFW-Test input" width="512" height="512" loading="lazy"><figcaption>Input</figcaption></figure>
+          <figure><img src="assets/lfw-codeformer.webp" alt="CodeFormer restoration on LFW-Test" width="512" height="512" loading="lazy"><figcaption>CodeFormer</figcaption></figure>
+          <figure><img src="assets/lfw-daefr.webp" alt="DAEFR restoration on LFW-Test" width="512" height="512" loading="lazy"><figcaption>DAEFR</figcaption></figure>
+          <figure class="ours"><img src="assets/lfw-geomar.webp" alt="GeoMAR restoration on LFW-Test" width="512" height="512" loading="lazy"><figcaption>GeoMAR <span>Ours</span></figcaption></figure>
+        </div>
+      </div>
+      <!-- BEGIN GENERATED BENCHMARK TABLES -->
+      <h2 class="quantitative-heading" id="quantitative-title">Quantitative Comparison</h2>
+      <h3 class="benchmark-title">Real-world Benchmarks</h3>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Complete real-world benchmark comparison. Scroll horizontally on small screens.">
+        <table class="benchmark-table" aria-label="All ten methods on LFW-Test, WebPhoto-Test, and WIDER-Test">
+          <thead><tr><th rowspan="2" scope="col">Prior type</th><th rowspan="2" scope="col">Method</th><th colspan="3" scope="colgroup">LFW-Test</th><th colspan="3" scope="colgroup">WebPhoto-Test</th><th colspan="3" scope="colgroup">WIDER-Test</th></tr><tr><th scope="col">FID ↓</th><th scope="col">NIQE ↓</th><th scope="col">MANIQA ↑</th><th scope="col">FID ↓</th><th scope="col">NIQE ↓</th><th scope="col">MANIQA ↑</th><th scope="col">FID ↓</th><th scope="col">NIQE ↓</th><th scope="col">MANIQA ↑</th></tr></thead>
+          <tbody>
+            <tr><th scope="rowgroup" rowspan="2" class="prior-type">GAN-based</th><th scope="row">GFPGAN</th><td>53.86</td><td>4.742</td><td>0.456</td><td>100.20</td><td>4.970</td><td>0.438</td><td>49.45</td><td>4.693</td><td>0.439</td></tr>
+            <tr><th scope="row">GPEN</th><td>55.18</td><td>4.538</td><td>0.479</td><td>85.63</td><td>5.306</td><td>0.438</td><td>58.52</td><td>5.264</td><td>0.450</td></tr>
+          </tbody>
+          <tbody>
+            <tr><th scope="rowgroup" rowspan="4" class="prior-type">Diffusion-based</th><th scope="row">DR2</th><td>50.79</td><td>4.538</td><td>0.525</td><td>113.37</td><td>6.035</td><td>0.412</td><td>54.70</td><td>5.904</td><td>0.407</td></tr>
+            <tr><th scope="row">DifFace</th><td>46.35</td><td>3.813</td><td>0.461</td><td>80.69</td><td>4.372</td><td>0.425</td><td>37.43</td><td>4.255</td><td>0.431</td></tr>
+            <tr><th scope="row">VSPBFR</th><td>46.37</td><td>3.746</td><td>0.533</td><td>77.24</td><td>4.218</td><td>0.502</td><td>38.20</td><td>3.579</td><td>0.493</td></tr>
+            <tr><th scope="row">DiffusionReward</th><td>48.92</td><td>4.386</td><td>0.517</td><td>79.49</td><td>5.202</td><td>0.483</td><td>36.49</td><td>4.724</td><td>0.492</td></tr>
+          </tbody>
+          <tbody>
+            <tr><th scope="rowgroup" rowspan="4" class="prior-type">Codebook-based</th><th scope="row">VQFR</th><td>50.09</td><td>3.836</td><td>0.534</td><td>85.28</td><td>4.608</td><td>0.491</td><td>37.87</td><td>4.036</td><td>0.504</td></tr>
+            <tr><th scope="row">CodeFormer</th><td>52.84</td><td>4.438</td><td>0.527</td><td>83.94</td><td>5.529</td><td>0.503</td><td>38.78</td><td>4.119</td><td>0.496</td></tr>
+            <tr><th scope="row">DAEFR</th><td>47.53</td><td>3.552</td><td>0.542</td><td>75.79</td><td>3.933</td><td>0.493</td><td>36.72</td><td>3.655</td><td>0.520</td></tr>
+            <tr class="ours-row"><th scope="row">GeoMAR <span>Ours</span></th><td>46.87</td><td>3.547</td><td>0.540</td><td>75.73</td><td>3.930</td><td>0.499</td><td>37.37</td><td>3.762</td><td>0.510</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 class="benchmark-title">CelebA-Test · Degradation FID = 144</h3>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Complete CelebA-Test comparison at degradation FID 144. Scroll horizontally on small screens.">
+        <table class="benchmark-table" aria-label="All ten methods on CelebA-Test at degradation FID 144">
+          <thead><tr><th scope="col">Prior type</th><th scope="col">Method</th><th scope="col">FID ↓</th><th scope="col">NIQE ↓</th><th scope="col">MANIQA ↑</th><th scope="col">PSNR (dB) ↑</th><th scope="col">SSIM ↑</th><th scope="col">LMD (%) ↓</th></tr></thead>
+          <tbody>
+            <tr><th scope="rowgroup" rowspan="2" class="prior-type">GAN-based</th><th scope="row">GFPGAN</th><td>52.29</td><td>4.565</td><td>0.466</td><td>25.80</td><td>0.708</td><td>2.52</td></tr>
+            <tr><th scope="row">GPEN</th><td>51.46</td><td>4.817</td><td>0.459</td><td>25.77</td><td>0.703</td><td>2.50</td></tr>
+          </tbody>
+          <tbody>
+            <tr><th scope="rowgroup" rowspan="4" class="prior-type">Diffusion-based</th><th scope="row">DR2</th><td>58.59</td><td>5.370</td><td>0.487</td><td>24.45</td><td>0.679</td><td>2.66</td></tr>
+            <tr><th scope="row">DifFace</th><td>37.88</td><td>4.157</td><td>0.468</td><td>24.80</td><td>0.673</td><td>2.47</td></tr>
+            <tr><th scope="row">VSPBFR</th><td>38.52</td><td>3.839</td><td>0.546</td><td>24.73</td><td>0.657</td><td>2.37</td></tr>
+            <tr><th scope="row">DiffusionReward</th><td>42.59</td><td>4.545</td><td>0.537</td><td>26.33</td><td>0.701</td><td>2.15</td></tr>
+          </tbody>
+          <tbody>
+            <tr><th scope="rowgroup" rowspan="4" class="prior-type">Codebook-based</th><th scope="row">VQFR</th><td>46.77</td><td>4.204</td><td>0.540</td><td>23.76</td><td>0.659</td><td>2.45</td></tr>
+            <tr><th scope="row">CodeFormer</th><td>52.42</td><td>4.594</td><td>0.538</td><td>25.15</td><td>0.670</td><td>2.32</td></tr>
+            <tr><th scope="row">DAEFR</th><td>40.76</td><td>3.744</td><td>0.545</td><td>22.59</td><td>0.609</td><td>2.44</td></tr>
+            <tr class="ours-row"><th scope="row">GeoMAR <span>Ours</span></th><td>39.61</td><td>3.819</td><td>0.541</td><td>21.95</td><td>0.597</td><td>2.66</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 class="benchmark-title">CelebA-Test · Degradation FID = 267</h3>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Complete CelebA-Test comparison at degradation FID 267. Scroll horizontally on small screens.">
+        <table class="benchmark-table" aria-label="All ten methods on CelebA-Test at degradation FID 267">
+          <thead><tr><th scope="col">Prior type</th><th scope="col">Method</th><th scope="col">FID ↓</th><th scope="col">NIQE ↓</th><th scope="col">MANIQA ↑</th><th scope="col">PSNR (dB) ↑</th><th scope="col">SSIM ↑</th><th scope="col">LMD (%) ↓</th></tr></thead>
+          <tbody>
+            <tr><th scope="rowgroup" rowspan="2" class="prior-type">GAN-based</th><th scope="row">GFPGAN</th><td>79.30</td><td>5.451</td><td>0.453</td><td>21.97</td><td>0.611</td><td>8.89</td></tr>
+            <tr><th scope="row">GPEN</th><td>72.99</td><td>5.723</td><td>0.447</td><td>22.05</td><td>0.619</td><td>9.19</td></tr>
+          </tbody>
+          <tbody>
+            <tr><th scope="rowgroup" rowspan="4" class="prior-type">Diffusion-based</th><th scope="row">DR2</th><td>72.41</td><td>5.579</td><td>0.477</td><td>21.28</td><td>0.606</td><td>4.40</td></tr>
+            <tr><th scope="row">DifFace</th><td>47.89</td><td>4.513</td><td>0.461</td><td>22.81</td><td>0.604</td><td>3.16</td></tr>
+            <tr><th scope="row">VSPBFR</th><td>43.28</td><td>3.512</td><td>0.500</td><td>21.02</td><td>0.503</td><td>4.76</td></tr>
+            <tr><th scope="row">DiffusionReward</th><td>49.70</td><td>5.021</td><td>0.534</td><td>23.25</td><td>0.640</td><td>3.04</td></tr>
+          </tbody>
+          <tbody>
+            <tr><th scope="rowgroup" rowspan="4" class="prior-type">Codebook-based</th><th scope="row">VQFR</th><td>53.73</td><td>4.743</td><td>0.553</td><td>21.84</td><td>0.621</td><td>3.28</td></tr>
+            <tr><th scope="row">CodeFormer</th><td>58.31</td><td>4.566</td><td>0.556</td><td>22.19</td><td>0.594</td><td>3.18</td></tr>
+            <tr><th scope="row">DAEFR</th><td>47.50</td><td>4.500</td><td>0.570</td><td>20.29</td><td>0.588</td><td>3.29</td></tr>
+            <tr class="ours-row"><th scope="row">GeoMAR <span>Ours</span></th><td>42.13</td><td>4.223</td><td>0.554</td><td>20.23</td><td>0.562</td><td>3.62</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- END GENERATED BENCHMARK TABLES -->
+    </section>
+
+    <section class="citation-section" id="citation" aria-labelledby="citation-title"><div class="container section">
+      <h2 id="citation-title">Citation</h2>
+      <p class="citation-intro">If you find this work useful, please consider citing our paper. <a href="https://doi.org/10.1145/3767308.3836198" target="_blank" rel="noopener noreferrer">ACM publication</a></p>
+      <div class="citation-code"><div class="code-toolbar"><span>BibTeX</span><button id="copy-citation" type="button">Copy citation</button></div><pre><code id="bibtex">@inproceedings{gan2026geomar,
+  title     = {GeoMAR: Unleashing Geometrically Aligned Features for
+               Masked Autoregressive Blind Face Restoration},
+  author    = {Gan, Lu and Yan, Hanyu and Chen, Chaofeng and
+               Hu, Junqi and Zeng, Dan},
+  booktitle = {Proceedings of the 34th ACM International Conference
+               on Multimedia},
+  year      = {2026},
+  doi       = {10.1145/3767308.3836198}
+}</code></pre></div><p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+    </div></section>
+  </main>
+  <footer class="container footer"><p>GeoMAR · ACM Multimedia 2026 · <a href="mailto:ganlu33@mail2.sysu.edu.cn">Contact</a></p></footer>
+  <noscript><p class="noscript">Enable JavaScript to use comparison sliders, dataset switching, and citation copying. The paper, figures, and links remain available.</p></noscript>
+</body>
+</html>
