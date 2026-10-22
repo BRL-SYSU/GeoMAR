@@ -58,11 +58,11 @@ Please put the following datasets in the ./datasets/ folder.
 | Dataset | Short description | Download | Text features |
 | --- | --- | --- | --- |
 | CelebA-Test (HQ) | 3,000 HQ ground-truth images for evaluation | [celeba_512_validation.zip](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/celeba_512_validation.zip) | — |
-| CelebA-Test-144 (LQ) | 3,000 synthetic LQ images for testing | [celeba-test-144.zip](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/celeba_test_144.zip) | — |
-| CelebA-Test-267 (LQ) | 3,000 synthetic LQ images for testing | [celeba-test-267.zip](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/celeba_test_267.zip) | — |
-| LFW-Test (LQ) | 1,711 real-world images for testing | [LFW-Test.zip](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/LFW-Test.zip) | — |
-| WebPhoto-Test | 407 real-world images for testing | [WebPhoto-Test.zp](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/WebPhoto-Test.zip) | — |
-| WIDER-Test (LQ) | 970 real-world images for testing | [WIDER-Test.zip](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/WIDER-Test.zip) | — |
+| CelebA-Test-144 (LQ) | 3,000 synthetic LQ images for testing | [celeba-test-144.zip](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/celeba_test_144.zip) | [Link](https://huggingface.co/datasets/ganlu33/GeoMAR_text_features/blob/main/celeba144_text_features.tar) |
+| CelebA-Test-267 (LQ) | 3,000 synthetic LQ images for testing | [celeba-test-267.zip](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/celeba_test_267.zip) | [Link](https://huggingface.co/datasets/ganlu33/GeoMAR_text_features/blob/main/celeba267_text_features.tar) |
+| LFW-Test (LQ) | 1,711 real-world images for testing | [LFW-Test.zip](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/LFW-Test.zip) | [Link](https://huggingface.co/datasets/ganlu33/GeoMAR_text_features/blob/main/lfw_text_features.tar) |
+| WebPhoto-Test | 407 real-world images for testing | [WebPhoto-Test.zp](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/WebPhoto-Test.zip) | [Link](https://huggingface.co/datasets/ganlu33/GeoMAR_text_features/blob/main/webphoto_text_features.tar) |
+| WIDER-Test (LQ) | 970 real-world images for testing | [WIDER-Test.zip](https://huggingface.co/datasets/ganlu33/GeoMAR_test_datasets/blob/main/WIDER-Test.zip) | [Link](https://huggingface.co/datasets/ganlu33/GeoMAR_text_features/blob/main/wider_text_features.tar) |
 
 
 ## Models and Priors
